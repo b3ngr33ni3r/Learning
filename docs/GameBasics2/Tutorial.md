@@ -63,8 +63,8 @@ To understand how i've done that, goto the [GameObject] constructor, and see the
 This is a common way to implement focus, so i've done it that way.
 
 Hopefully this provides you a pretty good understanding of the code, but if somethings not clear, here's what i recommend:
-	+ Tweet at [me](http://twitter.com/b3ngr33ni3r)
-	+ Submit an issue on [github](https://github.com/b3ngr33ni3r/Learning/issues/new) with something telling me what tutorial/part you don't get.
-	+ [Google it](http://lmgtfy.com/?q=java+problems)
-	+ Cry openly
-	+ Ask someone else for help!
+- Tweet at [me](http://twitter.com/b3ngr33ni3r)
+- Submit an issue on [github](https://github.com/b3ngr33ni3r/Learning/issues/new) with something telling me what tutorial/part you don't get.
+- [Google it](http://lmgtfy.com/?q=java+problems)
+- Cry openly
+- Ask someone else for help!
