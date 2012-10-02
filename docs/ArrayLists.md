@@ -8,7 +8,6 @@ __What is it?__
 	that stores int's. Relatively useful, fairly simple. Then, you might also want to add things to the list: ```intList.add(3);```, or maybe
 	remove them: ```intList.remove(3);```, or maybe get the lists size: ```intList.size();```. Woah, pretty straight forward, huh? 
 	
-	
 	I commonly use ArrayList's to store GameObject's, in a game enviroment where you may need to access created objects, time and time again. This
 	way, you can dynamically add or remove things from your game, without needing to use silly arrays, and try to resize arrays, which is a mess.
 	
