@@ -12,7 +12,7 @@ public class Main {
 	{
 		objects = new ArrayList<GameObject>();
 		frame = new JFrame();
-		frame.setLayout(null);
+		frame.setLayout(null); 
 		frame.setSize(600,500);
 		frame.setResizable(false);
 		frame.setVisible(true);

@@ -11,7 +11,7 @@ public class Turret extends GameObject {
 	private float movementSpeed;
 	private int range;
 	
-	public Turret(int x,int y)
+	public Turret(int x,int y) 
 	{
 		super();
 		setPosition(new Vec2i(x,y));

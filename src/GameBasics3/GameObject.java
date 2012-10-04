@@ -63,7 +63,7 @@ public class GameObject extends JLabel {
 
 	
 
-	public void setImage(String path) {
+	public void setImage(String path) { 
 		ImageIcon icon = new ImageIcon(path);
 		
 		//verify the icon loaded. using built in java stuff

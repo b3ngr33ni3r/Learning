@@ -3,7 +3,7 @@ package GameBasics3;
 public class Target extends GameObject {
 
 	/**
-	 * happy java now.
+	 * happy java now. 
 	 */
 	private static final long serialVersionUID = 1L;
 

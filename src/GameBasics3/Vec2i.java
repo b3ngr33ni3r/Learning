@@ -21,7 +21,7 @@ public class Vec2i {
 	public void shift(Vec2i val)
 	{
 		this.x = this.x+val.x;
-		this.y = this.y+val.y;
+		this.y = this.y+val.y; 
 	}
 	
 	//statically adds two vec2i's and returns the result
