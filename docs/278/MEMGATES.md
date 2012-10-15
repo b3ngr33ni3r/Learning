@@ -42,7 +42,7 @@ the load and store are the only two commands (well, and variations) that actuall
 
 [shift register](http://en.wikipedia.org/wiki/Shift_register)
 --------------
-shifts two data in a register left to right.
+shifts two data bits in a register left to right.
 In digital circuits, a shift register is a cascade of flip flops, sharing the same clock, in which the output of each flip-flop is connected to the "data"
 input of the next flip-flop in the chain, resulting in a circuit that shifts by one position the "bit array" stored in it, shifting in the data present at
 its input and shifting out the last bit in the array, at each transition of the clock input. More generally, a shift register may be multidimensional, such
@@ -51,5 +51,14 @@ Shift registers can have both parallel and serial inputs and outputs. These are 
 (PISO). There are also types that have both serial and parallel input and types with serial and parallel output. There are also bi-directional shift registers
 which allow shifting in both directions: L?R or R?L. The serial input and last output of a shift register can also be connected to create a circular shift register.
 
-SR flip flop
-------------
+
+you can learn more about flip flop circuits [here](http://en.wikipedia.org/wiki/Flip-flop_(electronics)).
+
+
+convert the following to nand gate circuits:
+--------------------------------------------
+<pre>
+~A ~C D + ~A ~B C + A ~B ~C + A ~B ~D
+
+= NAND(NAND(~A ~C D) NAND(~A ~B C) NAND(A ~B ~C) NAND(A ~B ~D))
+</pre>
