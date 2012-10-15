@@ -36,9 +36,16 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Main main = new Main();
-		main.register(new Turret(30,30));//turret is stationary, shoots bullets.
+		Turret turret = new Turret(30,30);
+		
+		main.register(turret);//turret is stationary, shoots bullets.
 		main.register(new Target(100,100));//target is draggable.
 		
+		//the game loop
+		while(true)
+		{
+			turret.adjust();
+		}
 	}
 
 }

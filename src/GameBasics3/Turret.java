@@ -51,6 +51,16 @@ public class Turret extends GameObject {
 	public void setRange(int range) {
 		this.range = range;
 	}
+
+	public void adjust() {
+		// TODO rotate toward target at getMovementSpeed if target is in range
+		
+	}
+	
+	public void fire()
+	{
+		// TODO spawn a little bullet, at getBulletSpeed, moving toward target, if target is in range
+	}
 	
 	
 }
