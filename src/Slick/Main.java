@@ -6,7 +6,8 @@ import org.newdawn.slick.SlickException;
 public class Main {
 
 	/**
-	 * when set to true, debug messages i define will be printed to System.out.
+	 * @deprecated
+	 * when set to true, debug messages i define will be printed to System.out. (turns out i don't really use this...)
 	 */
 	public static Boolean enableDebug=false;
 	
