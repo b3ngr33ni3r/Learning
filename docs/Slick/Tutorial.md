@@ -1,6 +1,6 @@
 Slick Tutorial
 ==============
-Okay, so this tutorial is going to be about building a basic game using the [slick](http://slick.codeandcode.com) game engine.
+Okay, so this tutorial is going to be about building a basic game using the [slick](http://slick.cokeandcode.com) game engine.
 This engine is based on the [lwjgl](http://lwjgl.com) so it's pretty simple to work with, and is low level enough to stay out of
 your way when you need it to. 
 
