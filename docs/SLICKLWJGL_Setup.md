@@ -11,10 +11,10 @@ Configuring Slick+LWJGL in Eclipse
 + __Highlight ```Native Library Location```__ and hit edit. in the popup choose workspace, then ```<yourProject>/lib/lwjgl-version/natives/<yourOs>```. then close that popup.
 + Now you're back in the properties window, and ```Native Library Location``` has a value. good. close out of properties.
 + Fire up some slick/lwjgl code and be sure everythings working!
-<br>
-<br>
+
 Test Code
--------
+---------
+
 Some example code to test things are working (Paste into a file named Main.java)
 <br>
 ```
