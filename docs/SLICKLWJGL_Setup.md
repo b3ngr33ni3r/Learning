@@ -11,7 +11,58 @@ Configuring Slick+LWJGL in Eclipse
 + __Highlight ```Native Library Location```__ and hit edit. in the popup choose workspace, then ```<yourProject>/lib/lwjgl-version/natives/<yourOs>```. then close that popup.
 + Now you're back in the properties window, and ```Native Library Location``` has a value. good. close out of properties.
 + Fire up some slick/lwjgl code and be sure everythings working!
+<br>
+<br>
+Some example code to test things are working (Paste into a file named Main.java)
+--------------------------------------------------------------------------------
+<code>
+import org.newdawn.slick.AppGameContainer;
+import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
 
+
+
+public class Main {
+
+	/**
+	 * @param args
+	 * @throws SlickException 
+	 */
+	public static void main(String[] args) throws SlickException {
+		// TODO Auto-generated method stub
+		AppGameContainer app = new AppGameContainer(new BasicGame(""){
+
+			@Override
+			public void render(GameContainer arg0, Graphics arg1)
+					throws SlickException {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void init(GameContainer arg0) throws SlickException {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void update(GameContainer arg0, int arg1)
+					throws SlickException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		app.setVerbose(false);
+		app.setDisplayMode(800, 600, false);
+		app.start();
+	}
+
+}
+
+</code>
 <br>
 <br>
 <br>
