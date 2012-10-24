@@ -1,7 +1,7 @@
 Configuring Slick+LWJGL in Eclipse
 ===================================
 + __Download__ [slick](http://slick.cokeandcode.com/downloads/slick.jar) and [lwjgl](http://sourceforge.net/projects/java-game-lib/files/Official%20Releases/LWJGL%202.8.4/lwjgl-2.8.4.zip/download)
-+ __Copy__ slick.jar and the lwjgl-version folder inside the lwjgl zip you downloaded to ```<yourProject>/lib``` create the folder lib if needed.
++ __Copy__ slick.jar and the lwjgl-version (currently called lwjgl-2.8.4) folder inside the lwjgl zip you downloaded to ```<yourProject>/lib``` create the folder lib if needed.
 + __Open your project__ in eclipse.
 + __Verify__ the lib folder is visible in the package explorer (left side of screen), if it isn't, refresh (right click project, choose refesh [protip: hit f5]).
 + __View your project properties__ (right click your project, choose properties [protip: hit alt+enter]).
