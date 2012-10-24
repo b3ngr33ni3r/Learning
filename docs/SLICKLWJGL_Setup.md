@@ -1,0 +1,19 @@
+Configuring Slick+LWJGL in Eclipse
+===================================
++ __Download__ [slick](http://slick.cokeandcode.com/downloads/slick.jar) and [lwjgl](http://sourceforge.net/projects/java-game-lib/files/Official%20Releases/LWJGL%202.8.4/lwjgl-2.8.4.zip/download)
++ __Copy__ slick.jar and the lwjgl-version folder inside the lwjgl zip you downloaded to ```<yourProject>/lib``` create the folder lib if needed.
++ __Open your project__ in eclipse.
++ __Verify__ the lib folder is visible in the package explorer (left side of screen), if it isn't, refresh (right click project, choose refesh [protip: hit f5]).
++ __View your project properties__ (right click your project, choose properties [protip: hit alt+enter]).
++ __Navigate to the ```Java Build Path```__ pane in properties (on the left side of the window).
++ Choose librarys tab, and hit add jar. Navigate to ```<yourProject>/lib``` and choose lwjgl.jar and slick.jar [protip: hold shift and select both], hit ok.
++ Now they're both in the list, hit the drop down arror on the left of "lwjgl.jar" to edit that jar's properties.
++ __Highlight ```Native Library Location```__ and hit edit. in the popup choose workspace, then ```<yourProject>/lib/lwjgl-version/natives/<yourOs>```. then close that popup.
++ Now you're back in the properties window, and ```Native Library Location``` has a value. good. close out of properties.
++ Fire up some slick/lwjgl code and be sure everythings working!
+
+<br>
+<br>
+<br>
+
+_I'll edit this as i find deviations from these directions are needed_ (as i'm sure they will be).
