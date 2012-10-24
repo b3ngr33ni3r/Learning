@@ -17,7 +17,7 @@ Test Code
 -------
 Some example code to test things are working (Paste into a file named Main.java)
 <br>
-<code>
+```
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
@@ -65,7 +65,7 @@ public class Main {
 
 }
 
-</code>
+```
 <br>
 <br>
 <br>
