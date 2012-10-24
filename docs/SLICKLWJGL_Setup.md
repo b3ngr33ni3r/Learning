@@ -13,9 +13,12 @@ Configuring Slick+LWJGL in Eclipse
 + Fire up some slick/lwjgl code and be sure everythings working!
 <br>
 <br>
+Test Code
+-------
 Some example code to test things are working (Paste into a file named Main.java)
---------------------------------------------------------------------------------
+<br>
 <code>
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
