@@ -29,7 +29,7 @@ but you first need to define the calls to them in your derived instance of ```or
 ```public void update(GameContainer gc,int delta){ for (GameObject obj : GameObjectsArrayList) obj.update(gc,delta); }``` and the same
 style for the other methods, except instantiate. Please note that for this to work, your ```org.newdawn.slick.Game``` must be keeping
 some sort of ```Collection``` of all ```GameObject```'s added to it. For instantiate, we define this method so that it can be 
-```@Override``n, and we then want to be sure each derived ```GameObject```'s constructor calls it, as the last line. This way,
+```@Override```n, and we then want to be sure each derived ```GameObject```'s constructor calls it, as the last line. This way,
 we can better modify a new ```GameObject``` from an anonymous inner class.
 
 
