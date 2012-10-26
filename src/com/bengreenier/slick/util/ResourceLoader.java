@@ -1,17 +1,27 @@
 package com.bengreenier.slick.util;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Sound;
+import org.newdawn.slick.SpriteSheet;
 
 /**
- * Basic Resource loader, can currently handle Sound and Image
+ * Basic Resource loader, can currently handle Sound and Image and SpriteSheet
  * might not always be perfect.
  * 
  * Singleton class.
+ * 
+ * SpriteSheet tw,th is statically set to 64px, which is no good, should be configurable via .res file
  * 
  * @version 1
  * @author B3N
@@ -19,7 +29,7 @@ import org.newdawn.slick.Sound;
  */
 public class ResourceLoader {
 
-	public enum Type{IMAGE,SOUND};
+	public enum Type{IMAGE,SOUND,SPRITESHEET};
 	private class Request{
 		public String path;
 		public Type type;
@@ -107,6 +117,9 @@ public class ResourceLoader {
 				case IMAGE:
 					getSingleton().resources.put(req.path, new Image(req.path));
 					break;
+				case SPRITESHEET:
+					getSingleton().resources.put(req.path, new SpriteSheet(new Image(req.path),64,64));
+					break;
 				}
 				
 			}catch(SlickException e)
@@ -125,6 +138,30 @@ public class ResourceLoader {
 	public Object retrieve(String name)
 	{
 		return getSingleton().resources.get(name);
+	}
+	
+	/**
+	 * populate given the file structure of type:path\n
+	 * @param filename the file to open to read this structure of loading
+	 */
+	public void Populate(String filename)
+	{
+		Path path = Paths.get(filename);
+		
+		try (InputStream in = Files.newInputStream(path);
+		    BufferedReader reader =
+		      new BufferedReader(new InputStreamReader(in))) {
+		    String line = null;
+		    while ((line = reader.readLine()) != null) {
+
+		    	String type = line.split(":")[0];
+		    	String filepath = line.split(":")[1];
+		    	getSingleton().loadRequests.add(new Request(filepath,Type.valueOf(type)));
+		    	
+		    }
+		} catch (IOException x) {
+		    x.printStackTrace();
+		}
 	}
 	
 }
