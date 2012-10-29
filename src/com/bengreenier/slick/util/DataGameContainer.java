@@ -28,6 +28,7 @@ public abstract class DataGameContainer extends GameContainer {
 		instantiate();
 	}
 	
+	
 	/**
 	 * default empty method that can optionally be overridden, to better configure this class when it's used as an anonymous inner class.
 	 */

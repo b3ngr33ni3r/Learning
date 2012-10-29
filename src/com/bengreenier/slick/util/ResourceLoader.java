@@ -21,9 +21,8 @@ import org.newdawn.slick.SpriteSheet;
  * 
  * Singleton class.
  * 
- * SpriteSheet tw,th is statically set to 64px, which is no good, should be configurable via .res file
  * 
- * @version 1
+ * @version 1.3
  * @author B3N
  *
  */
@@ -33,10 +32,17 @@ public class ResourceLoader {
 	private class Request{
 		public String path;
 		public Type type;
+		public Vector2i dimension = null;
 		public Request(String path,Type type)
 		{
 			this.type = type;
 			this.path = path;
+		}
+		public Request(String path, Type type, Vector2i dimension)
+		{
+			this.type = type;
+			this.path = path;
+			this.dimension = dimension;
 		}
 	}
 	
@@ -118,7 +124,7 @@ public class ResourceLoader {
 					getSingleton().resources.put(req.path, new Image(req.path));
 					break;
 				case SPRITESHEET:
-					getSingleton().resources.put(req.path, new SpriteSheet(new Image(req.path),64,64));
+					getSingleton().resources.put(req.path, new SpriteSheet(new Image(req.path),req.dimension.getX(),req.dimension.getY()));
 					break;
 				}
 				
@@ -155,8 +161,19 @@ public class ResourceLoader {
 		    while ((line = reader.readLine()) != null) {
 
 		    	String type = line.split(":")[0];
-		    	String filepath = line.split(":")[1];
-		    	getSingleton().loadRequests.add(new Request(filepath,Type.valueOf(type)));
+		    	
+		    	if (Type.valueOf(type)==Type.SPRITESHEET)
+		    	{
+		    		String dim = line.split(":")[1];
+		    		Vector2i vec = new Vector2i(Integer.parseInt(dim.split("x")[0]),Integer.parseInt(dim.split("x")[1]));
+		    		String filepath = line.split(":")[2];
+			    	getSingleton().loadRequests.add(new Request(filepath,Type.valueOf(type),vec));
+		    	}else{
+		    		String filepath = line.split(":")[1];
+			    	getSingleton().loadRequests.add(new Request(filepath,Type.valueOf(type)));
+		    	}
+		    	
+		    	
 		    	
 		    }
 		} catch (IOException x) {

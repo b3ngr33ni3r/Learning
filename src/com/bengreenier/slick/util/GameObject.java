@@ -1,5 +1,7 @@
 package com.bengreenier.slick.util;
 
+import org.newdawn.slick.geom.Shape;
+
 
 /**
  * REQUIRES GameMethods!!!
@@ -33,6 +35,11 @@ public abstract class GameObject implements GameMethods {
 	 * GameObject State. see State enums.
 	 */
 	private State state=State.VISIBLE;
+	
+	/**
+	 * Shape to verify things
+	 */
+	public Shape shape = null;
 	
 	/**
 	 * our constructor, nothing special here
