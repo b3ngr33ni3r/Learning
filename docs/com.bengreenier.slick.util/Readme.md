@@ -67,7 +67,7 @@ If you wish to hardcode all the resources you need to load, rather then Populate
 you can call ```queue(<PATH>,<TYPE>)``` where type is ```ResourceLoader.Type```.
 
 However, if you use .res files, as i do, here is the format for one:
-<code>
+<pre>
 
 IMAGE:res/image.png
 IMAGE:res/image2.filetype
@@ -75,6 +75,6 @@ SOUND:res/sound.mp3
 SOUND:res/sound2.filetype
 SPRITESHEET:10x10:res/sheet.png
 
-</code>
+</pre>
 You'll notice that its straightforward, but spritesheet's get the dimensions of a sprite before the path.
 Generally its just ```ResourceLoader.Type```:```<FILE PATH>```. One entry per line.
