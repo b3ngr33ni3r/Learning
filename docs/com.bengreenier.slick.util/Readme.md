@@ -48,3 +48,33 @@ Vector class designed to store two integers. Provides basic math operation metho
 for instance adding, subtracting, etc. Additionally contains static methods for ```Vector2i``` basic
 math operations, in the event you wish you to math without modifying either ```Vector2i```. We create this class with
 two integers, x,y which become the stored values.
+
+
+ResourceLoader
+--------------
+
+ResourceLoading for slick, can currently load ```Image```,```Sound```,and ```SpriteSheet```. The most useful way to use this imo, is to
+configure the ResourceLoader to populate from a .res file, and then call the load method to load all the resources needed atm, in the init
+method of the game, or the game state you need them for. For instance, i use it as follows:
++ ```com.bengreenier.slick.util.ResourceLoader.singleton.Populate("res/resources.res");``` to tell it what resources to use
++ ```com.bengreenier.slick.util.ResourceLoader.singleton.load();``` on game ```init``` to load all the resources into memory
++ ```Image bkg = (Image) ResourceLoader.singleton.retrieve("res/bkg-solid-white.png");``` to access an ```Image```.
+
+The loader can also be used with existing resources, by calling ```track(<PATH>,<RESOURCE>)``` on them, though this isn't really
+that useful. 
+
+If you wish to hardcode all the resources you need to load, rather then Populate from a file,
+you can call ```queue(<PATH>,<TYPE>)``` where type is ```ResourceLoader.Type```.
+
+However, if you use .res files, as i do, here is the format for one:
+<code>
+
+IMAGE:res/image.png
+IMAGE:res/image2.filetype
+SOUND:res/sound.mp3
+SOUND:res/sound2.filetype
+SPRITESHEET:10x10:res/sheet.png
+
+</code>
+You'll notice that its straightforward, but spritesheet's get the dimensions of a sprite before the path.
+Generally its just ```ResourceLoader.Type```:```<FILE PATH>```. One entry per line.
