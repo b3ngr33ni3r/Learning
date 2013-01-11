@@ -29,22 +29,13 @@ public class Main {
 				
 				//output the data that is indirectly encapsulated inside usa.
 				for (Region r : usa.getRegions()) {
-					System.out.println(r.getName()+" Population: "+r.getPopulation());
-					System.out.println(r.getName()+" Area: "+r.getArea());
-					if (r instanceof City) {
-						System.out.println(r.getName()+" is a city");
-						System.out.println(r.getName()+" Mayor: "+((City)r).getMayorName());
-						System.out.println(r.getName()+" Building Count: "+((City)r).getBuildingCount());
-					} else if (r instanceof Country) {
-						System.out.println(r.getName()+" is a country");
-						System.out.println(r.getName()+" Leader: "+((Country)r).getLeaderName());
-					} else if (r instanceof State) {
-						System.out.println(r.getName()+" is a state");
-						System.out.println(r.getName()+" Governor: "+((State)r).getGovernorName());
+					if (r instanceof State){
+						System.out.println(r);
+						for (Region j : ((State) r).getRegions())
+							System.out.println(j);
+					}else{
+						System.out.println(r);
 					}
-					
-					System.out.println(r.getName()+" Population: "+r.getPopulation());
-					System.out.println(r.getName()+" Area: "+r.getArea());
 				}
 				
 				//end data output
@@ -69,22 +60,13 @@ public class Main {
 				
 				//output the data that is indirectly encapsulated inside usa.
 				for (Region r : c.getRegions()) {
-					System.out.println(r.getName()+" Population: "+r.getPopulation());
-					System.out.println(r.getName()+" Area: "+r.getArea());
-					if (r instanceof City) {
-						System.out.println(r.getName()+" is a city");
-						System.out.println(r.getName()+" Mayor: "+((City)r).getMayorName());
-						System.out.println(r.getName()+" Building Count: "+((City)r).getBuildingCount());
-					} else if (r instanceof Country) {
-						System.out.println(r.getName()+" is a country");
-						System.out.println(r.getName()+" Leader: "+((Country)r).getLeaderName());
-					} else if (r instanceof State) {
-						System.out.println(r.getName()+" is a state");
-						System.out.println(r.getName()+" Governor: "+((State)r).getGovernorName());
+					if (r instanceof State){
+						System.out.println(r);
+						for (Region j : ((State) r).getRegions())
+							System.out.println(j);
+					}else{
+						System.out.println(r);
 					}
-					
-					System.out.println(r.getName()+" Population: "+r.getPopulation());
-					System.out.println(r.getName()+" Area: "+r.getArea());
 				}
 				
 				//end data output

@@ -58,7 +58,16 @@ public class City extends AtomicRegion {
 		this.buildingCount = buildingCount;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String t = "City: {\n" +
+				"\t Name: "+getName() +
+				"\n\t Population: "+getPopulation()+
+				"\n\t Area: "+getArea()+
+				"\n\t Mayor Name: "+getMayorName()+
+				"\n\t Building Count: "+getBuildingCount()+"\n}";
+		return t;
+	}
 	
 
 }

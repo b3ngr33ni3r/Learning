@@ -45,6 +45,14 @@ public abstract class Region {
 		this.name = name;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String t = "Region: {\n" +
+				"\t Name: "+ getName() +
+				"\n\t Population: "+getPopulation()+
+				"\n\t Area: "+getArea()+
+				"\n}";
+		return t;
+	}
 	
 }

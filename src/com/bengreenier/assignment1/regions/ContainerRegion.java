@@ -87,7 +87,14 @@ public class ContainerRegion extends Region {
 		return this;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String t = "ContainerRegion: {\n" +
+				"\t Name: "+getName()+
+				"\n\t Population: "+getPopulation()+
+				"\n\t Area: "+getArea()+"\n}";
+		return t;
+	}
 	
 
 }

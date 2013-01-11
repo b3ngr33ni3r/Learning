@@ -28,6 +28,14 @@ public class State extends ContainerRegion {
 		this.governorName = governorName;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String t = "State: {\n" +
+				"\t Name: "+getName() +
+				"\n\t Population: "+getPopulation()+
+				"\n\t Area: "+getArea()+
+				"\n\t Governor Name: "+getGovernorName()+"\n}";
+		return t;
+	}
 
 }
