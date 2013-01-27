@@ -2,7 +2,6 @@ package com.bengreenier.assignment2.core;
 
 import java.util.Iterator;
 
-@SuppressWarnings("unused")
 public class LinkedList<T> implements Iterable<T>{
 	private class Node<K>{
 		private K item;

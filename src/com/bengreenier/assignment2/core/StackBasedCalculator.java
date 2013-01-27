@@ -8,11 +8,10 @@ import javax.swing.JButton;
 
 import de.congrace.exp4j.Calculable;
 import de.congrace.exp4j.ExpressionBuilder;
-import de.congrace.exp4j.UnknownFunctionException;
-import de.congrace.exp4j.UnparsableExpressionException;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JLabel;
 public class StackBasedCalculator {
 
 	private class ProcessClick implements MouseListener{
@@ -55,6 +54,7 @@ public class StackBasedCalculator {
 	private enum Operation{RPAR,LPAR,ADD,ZERO,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,QUIT,CLEAR,EQUALS,MULTIPLY,DIVIDE,SUBTRACT,BACKSPACE};
 	private JFrame frmCalculator;
 	private JTextField textField;
+	private JLabel lblNewLabel;
 	private LinkedList<Operation> operations;
 	
 	/**
@@ -196,6 +196,10 @@ public class StackBasedCalculator {
 		button_17.addMouseListener(new ProcessClick(Operation.EQUALS));
 		button_17.setBounds(307, 250, 89, 23);
 		frmCalculator.getContentPane().add(button_17);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(260, 70, 111, 14);
+		frmCalculator.getContentPane().add(lblNewLabel);
 	}
 	
 	//do what needs to happen for the calculator to function.
@@ -206,6 +210,7 @@ public class StackBasedCalculator {
 			adjustText();
 			break;
 		case CLEAR:
+			lblNewLabel.setText("");
 			operations.clear();
 			adjustText();
 			break;
@@ -239,7 +244,7 @@ public class StackBasedCalculator {
 			textField.setText(""+calc.calculate());
 			operations.clear();
 		} catch (Exception e) {
-			e.printStackTrace();
+			lblNewLabel.setText("INVALID");
 		}
 	}
 	
@@ -253,6 +258,7 @@ public class StackBasedCalculator {
 		textField.setText(visual);
 	}
 	
+	@SuppressWarnings("incomplete-switch")
 	private String decodeOp(Operation op) {
 		String visual="";
 		switch(op) {
