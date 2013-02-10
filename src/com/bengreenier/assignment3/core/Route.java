@@ -1,7 +1,15 @@
 package com.bengreenier.assignment3.core;
 
 import java.util.Scanner;
-
+/**
+ * This code in not 
+ * very object oriented,
+ * and ended up being fairly linear.
+ * however, it does work just fine,
+ * for the purpose of the class.
+ * @author B3N
+ *
+ */
 public class Route {
 
 	private Station head;
@@ -131,14 +139,20 @@ public class Route {
 	}
 	
 	public static void main(String[] args) {
+		
+		//here we create a route, and add some stations.
 		Route route = new Route("E Line");
 		route.add("Copley",100,0);
 		route.add("Prudential",56,100);
 		route.add("Symphony",200,56);
 		route.add("Northeastern",0,200);
 		
+		//here we verify the integrity of the route
 		System.out.println(route);
 	
+		//here's our route loop, constantly simulating.
+		//the loop will prompt for how many iterations the
+		//tester would like to run at one time, to be speedy.
 		Scanner in = new Scanner(System.in);
 		int count = 0;
 		while (true) {
@@ -150,13 +164,15 @@ public class Route {
 			
 			if (count>0) {
 				count--;
+				
+				//move the train along, calling any stops along the way.
 				route.getTrain().advance();
 				
 				System.out.println(route.getTrain().getTimeUntilNext()+" until "+route.getTrain().getNextStation()+
 						"\n\t passengers on train: "+route.getTrain().getPassengers().size());
 			} else {
 				
-				
+				//type stop to stop! iterate a number
 				System.out.print("iterate or type 'stop': ");
 				String i = in.next();
 				if (i.equals("stop")) {
@@ -168,10 +184,6 @@ public class Route {
 					
 			}
 		}
-		
-		//route.reverse();
-		//System.out.println(route);
-		//System.out.println(route.getTrain().getTimeUntilNext()+" "+route.getTrain().getNextStation());
 		
 		
 		
